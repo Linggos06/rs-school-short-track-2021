@@ -20,11 +20,25 @@ function findIndex (arr, val) {
   // eslint-disable-next-line array-callback-return
   // eslint-disable-next-line consistent-return
   // eslint-disable-next-line array-callback-return
-  return arr.filter((i) => {
-    if (i === val) {
-      return arr.indexOf(i);
+  // eslint-disable-next-line no-restricted-syntax
+  let first = 0;
+  let last = arr.length - 1;
+  let position = -1;
+  let found = false;
+  let middle;
+
+  while (found === false && first <= last) {
+    middle = Math.floor((first + last) / 2);
+    if (arr[middle] === val) {
+      found = true;
+      position = middle;
+    } else if (arr[middle] > val) {
+      last = middle - 1;
+    } else {
+      first = middle + 1;
     }
-  });
+  }
+  return position;
 }
 
 module.exports = findIndex;
