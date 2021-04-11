@@ -1,3 +1,8 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable consistent-return */
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
+// eslint-disable-next-line linebreak-style
 /**
  * Given a sorted array, find the index of the element with the given value.
  * Time complexity should be O(logN)
@@ -11,8 +16,15 @@
  * For ([1, 2, 3], 2) should return 1
  *
  */
-function findIndex(/* array, value */) {
-  throw new Error('Not implemented');
+function findIndex (arr, val) {
+  // eslint-disable-next-line array-callback-return
+  // eslint-disable-next-line consistent-return
+  // eslint-disable-next-line array-callback-return
+  return arr.filter((i) => {
+    if (i === val) {
+      return arr.indexOf(i);
+    }
+  });
 }
 
 module.exports = findIndex;
