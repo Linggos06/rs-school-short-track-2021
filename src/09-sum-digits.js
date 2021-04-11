@@ -13,15 +13,16 @@
  */
 // eslint-disable-next-line consistent-return
 function getSumOfDigits(num) {
-  const numm = num.split('').reduce((acc, val) => {
+  const number = num.toString().split('').reduce((acc, val) => {
     // eslint-disable-next-line no-param-reassign
     acc += Number(val);
     return acc;
   }, 0);
-  if (numm > 9) {
-    getSumOfDigits(numm);
+  if (number < 10) {
+    return number;
+  // eslint-disable-next-line no-else-return
   } else {
-    return numm;
+    return getSumOfDigits(number);
   }
 }
 
