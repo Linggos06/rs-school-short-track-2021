@@ -17,8 +17,15 @@
  * }
  */
 
-function removeKFromList(/* l, k */) {
-  throw new Error('Not implemented');
+function removeKFromList(list, k) {
+  let mean = list;
+  if (mean.value === k) {
+    mean = mean.next;
+  }
+  if (mean.next) {
+    mean.next = removeKFromList(mean.next, k);
+  }
+  return mean;
 }
 
 module.exports = removeKFromList;
