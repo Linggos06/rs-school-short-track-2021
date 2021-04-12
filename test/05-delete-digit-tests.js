@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const assert = require('assert');
 const deleteDigit = require('../src/05-delete-digit');
 it.optional = require('../extensions/it-optional');
